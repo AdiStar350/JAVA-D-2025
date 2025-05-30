@@ -1,9 +1,13 @@
+
 public class Main {
+
     /**
-     * Checks if all digits between the minimum and maximum digits of the given number are present.
+     * Checks if all digits between the minimum and maximum digits of the given
+     * number are present.
      *
      * @param num the number to check
-     * @return true if all digits between the minimum and maximum digits are present, false otherwise
+     * @return true if all digits between the minimum and maximum digits are
+     * present, false otherwise
      */
     public static boolean isMissing(int num) {
         int cnt = 0;
@@ -18,14 +22,21 @@ public class Main {
             cnt++;
             num /= 10;
 
-            if (dig < minDig) { minDig = dig; }
-            else if (dig > maxDig) { maxDig = dig; }
+            if (dig < minDig) {
+                minDig = dig;
+            } else if (dig > maxDig) {
+                maxDig = dig;
+            }
         }
 
-        if (cnt != maxDig - minDig + 1) { return false; }
+        if (cnt != maxDig - minDig + 1) {
+            return false;
+        }
 
         for (int i = minDig + 1; i < maxDig; i++) {
-            if (counter[i] == 0) { return false; }
+            if (counter[i] == 0) {
+                return false;
+            }
         }
 
         return true;
